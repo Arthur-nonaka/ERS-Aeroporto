@@ -22,7 +22,7 @@ if(!empty($_POST['search'])){
 
     $elements = $controller->getFilteredAircrafts($search);
 
-    $_SESSION[$elements];
+    $_SESSION['elements'] = $elements;
 
     header("Location: ./index.php");
     die();
