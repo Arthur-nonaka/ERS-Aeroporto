@@ -1,6 +1,10 @@
 <?php
 /**
- * Aircraft is a entity class that has model,status,seats,location
+ * Class Aircraft 
+ * 
+ * An entity class that has model,status,seats,location
+ * 
+ * @author Arthur Nonaka Oda
  */
 class Aircraft {
     private string $status;
