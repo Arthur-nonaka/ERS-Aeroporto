@@ -30,5 +30,14 @@ if(!empty($_POST['search'])){
     $_SESSION['elements'] = "";
 }
 
+if(!empty($_GET['id'])){
+    $id = $_GET['id'];
+
+    $controller->deleteAircraft($id);
+
+    header("Location: ./index.php");
+    die();
+}
+
 header("Location: ./index.php");
 ?>
