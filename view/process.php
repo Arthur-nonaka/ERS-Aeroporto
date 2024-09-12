@@ -11,7 +11,7 @@ if(!empty($_POST['model']) && !empty($_POST['status']) &&
     $location = $_POST['location'];
     
 
-    $controller->registerAircraft($model, $status, $seats, $location);
+    $controller->registerAircraft($status, $model,$seats, $location);
 
     header("location: ./index.php");
     die();
@@ -26,5 +26,9 @@ if(!empty($_POST['search'])){
 
     header("Location: ./index.php");
     die();
+}else {
+    $_SESSION['elements'] = "";
 }
+
+header("Location: ./index.php");
 ?>

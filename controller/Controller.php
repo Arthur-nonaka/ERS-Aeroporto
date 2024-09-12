@@ -24,8 +24,8 @@ class Controller
 
         foreach($aircrafts as $aircraft) {
             $elements .= '<td>' . $aircraft["id"]. "</td>" .
-             '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["model"] . "</td>".
+             '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["seats"] . "</td>".
             '<td>' . $aircraft["location"] . "</td>";
             $elements .= "</tr>";
@@ -40,8 +40,8 @@ class Controller
 
         foreach($aircrafts as $aircraft) {
             $elements .= '<td>' . $aircraft["id"]. "</td>" .
-             '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["model"] . "</td>".
+             '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["seats"] . "</td>".
             '<td>' . $aircraft["location"] . "</td>";
             $elements .= "</tr>";

@@ -36,7 +36,7 @@
             <?php
             session_start();
 
-            if($_SESSION['elements'] != null){
+            if($_SESSION['elements'] != ""){
                 echo $_SESSION['elements'];
             } else {
                 require_once "../controller/Controller.php";
