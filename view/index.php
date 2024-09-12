@@ -19,7 +19,7 @@
         </form>
     </div>
     <div>
-        <form action="./process.php">
+        <form action="./process.php" method="post">
             <input type="text" name="search">
             <input type="submit" value="Procurar">
         </form>
