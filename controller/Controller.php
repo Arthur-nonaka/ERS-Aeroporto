@@ -1,18 +1,24 @@
 <?php
 require_once "./model/Database.php";
+require_once "./model/Aircraft.php";
 
 class Controller
 {
-    private $dataBase;
+    private $database;
 
     public function __construct()
     {
-        $this->dataBase = new Database("localhost", "root", "", "aeroporto");
+        $this->database = new Database("localhost", "root", "", "aeroporto");
     }
 
     public function registerAircraft($status, $model, $seats, $location)
     {
         $aircraft = new Aircraft($status, $model, $seats, $location);
-        $this->dataBase->insertAircraft($aircraft);
+        $this->database->insertAircraft($aircraft);
+    }
+
+    public function getAircrafts() : array
+    {
+        return $this->database->selectAircrafts();
     }
 }
