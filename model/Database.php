@@ -44,7 +44,7 @@ class Database
         return ($result);
     }
 
-    public function deleteAircraft($id)
+    public function deleteAircraftById($id)
     {
         $connection = $this->connectDB();
         $query = "DELETE FROM aircraft WHERE id = " . $id;
