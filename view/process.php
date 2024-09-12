@@ -44,6 +44,10 @@ if(!empty($_GET['id']) && $_GET['type'] == "delete"){
 
 if(!empty($_GET['id']) && $_GET['type'] == "edit"){
     $_SESSION['id'] = $_GET['id'];
+    $_SESSION['model'] = $_GET['model'];
+    $_SESSION['seats'] = $_GET['seats'];
+    $_SESSION['status'] = $_GET['status'];
+    $_SESSION['location'] = $_GET['location'];
 }
 
 header("Location: ./index.php");
