@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Database class used to execute functions
+ * 
+ * @author Matheus Mendes dos Santos
+ */
 class Database
 {
     private $host;
@@ -15,11 +19,26 @@ class Database
         $this->database = $database;
     }
 
+    /**
+     * Connects to the database
+     * 
+     * @author Matheus Mendes dos Santos
+     * @return connection
+     */
+
     public function connectDB()
     {
         $connection = mysqli_connect($this->host, $this->login, $this->password, $this->database);
         return ($connection);
     }
+
+    /**
+     * Inserts an aircraft into the database
+     * 
+     * @author Matheus Mendes dos Santos
+     * 
+     * @param aircraft
+     */
 
     public function insertAircraft($aircraft)
     {
@@ -28,6 +47,14 @@ class Database
         mysqli_query($connection, $query);
     }
 
+
+    /**
+     * Selects all aircrafts from the database
+     * 
+     * @author Matheus Mendes dos Santos
+     * 
+     * @return result
+     */
     public function selectAircrafts()
     {
         $connection = $this->connectDB();
@@ -35,6 +62,15 @@ class Database
         $result = mysqli_query($connection, $query);
         return ($result);
     }
+
+    /**
+     * Selects an aircraft by its model
+     * 
+     * @author Matheus Mendes dos Santos
+     * 
+     * @param model
+     * @return result
+     */
 
     public function getAircraftByModel($model)
     {
@@ -44,6 +80,13 @@ class Database
         return ($result);
     }
 
+    /**
+     * Deletes an aircraft by its id
+     * 
+     * @author Matheus Mendes dos Santos
+     * 
+     * @param id
+     */
     public function deleteAircraftById($id)
     {
         $connection = $this->connectDB();
