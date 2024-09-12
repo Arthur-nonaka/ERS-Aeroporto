@@ -15,6 +15,6 @@ if(!empty($_POST['model']) && !empty($_POST['status']) &&
     
     $controller = new Controller();
 
-    
+    $controller->registerAircraft($model, $status, $seats, $location);
 }
 ?>
