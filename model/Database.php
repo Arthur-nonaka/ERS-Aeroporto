@@ -1,6 +1,6 @@
 <?php
 
-class dataBase
+class Database
 {
     private $host;
     private $login;
@@ -24,7 +24,7 @@ class dataBase
     public function insertAircraft($aircraft)
     {
         $connection = $this->connectDB();
-        $query = "INSERT INTO aircraft (status, model, seats, location) VALUES ('$aircraft->status', '$aircraft->model', '$aircraft->seats', '$aircraft->location')";
+        $query = "INSERT INTO aircraft (status, model, seats, location) VALUES ('".$aircraft->getStatus()."', '".$aircraft->getModel()."', '".$aircraft->getSeats()."', '".$aircraft->getLocation()."')";
         mysqli_query($connection, $query);
     }
 

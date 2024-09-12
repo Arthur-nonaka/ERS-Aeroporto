@@ -1,6 +1,6 @@
 <?php
-require_once "./model/Database.php";
-require_once "./model/Aircraft.php";
+require_once "../model/Database.php";
+require_once "../model/Aircraft.php";
 
 class Controller
 {
@@ -17,8 +17,20 @@ class Controller
         $this->database->insertAircraft($aircraft);
     }
 
-    public function getAircrafts() : array
+    public function getAircrafts()
     {
-        return $this->database->selectAircrafts();
+        $aircrafts = $this->database->selectAircrafts();
+        $elements = "<tr>";
+
+        foreach($aircrafts as $aircraft) {
+            $elements .= '<td>' . $aircraft["id"]. "</td>" .
+             '<td>' . $aircraft["status"] . "</td>".
+            '<td>' . $aircraft["model"] . "</td>".
+            '<td>' . $aircraft["seats"] . "</td>".
+            '<td>' . $aircraft["location"] . "</td>";
+            $elements .= "</tr>";
+        }
+
+        return $elements;
     }
 }
