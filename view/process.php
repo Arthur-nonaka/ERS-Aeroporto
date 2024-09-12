@@ -33,13 +33,17 @@ if(!empty($_POST['search'])){
     $_SESSION['elements'] = "";
 }
 
-if(!empty($_GET['id'])){
+if(!empty($_GET['id']) && $_GET['type'] == "delete"){
     $id = $_GET['id'];
 
     $controller->deleteAircraft($id);
 
     header("Location: ./index.php");
     die();
+}
+
+if(!empty($_GET['id']) && $_GET['type'] == "edit"){
+    $_SESSION['id'] = $_GET['id'];
 }
 
 header("Location: ./index.php");
