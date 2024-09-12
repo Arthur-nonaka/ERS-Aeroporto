@@ -31,6 +31,7 @@
             <td>Condicao</td>
             <td>Quantidade</td>
             <td>Localização</td>
+            <td>Deletar</td>
         </thead>
         <tbody>
             <?php

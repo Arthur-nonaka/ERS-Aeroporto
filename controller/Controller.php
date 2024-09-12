@@ -27,7 +27,8 @@ class Controller
             '<td>' . $aircraft["model"] . "</td>".
              '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["seats"] . "</td>".
-            '<td>' . $aircraft["location"] . "</td>";
+            '<td>' . $aircraft["location"] . "</td>".
+            "<td> X </td>";
             $elements .= "</tr>";
         }
 
@@ -43,7 +44,8 @@ class Controller
             '<td>' . $aircraft["model"] . "</td>".
              '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["seats"] . "</td>".
-            '<td>' . $aircraft["location"] . "</td>";
+            '<td>' . $aircraft["location"] . "</td>". 
+            "<td> <a href='./process.php?id=".$aircraft["id"]."'>X</a> </td>";
             $elements .= "</tr>";
         }
 
