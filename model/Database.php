@@ -43,4 +43,11 @@ class Database
         $result = mysqli_query($connection, $query);
         return ($result);
     }
+
+    public function deleteAircraft($id)
+    {
+        $connection = $this->connectDB();
+        $query = "DELETE FROM aircraft WHERE id = " . $id;
+        mysqli_query($connection, $query);
+    }
 }
