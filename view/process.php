@@ -16,6 +16,7 @@ if(!empty($_POST['model']) && !empty($_POST['status']) &&
     } else {
         $controller->registerAircraft($status, $model,$seats, $location);
     }
+    session_destroy();
     header("location: ./index.php");
     die();
 }

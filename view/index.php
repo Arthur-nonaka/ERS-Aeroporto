@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+
+    error_reporting(0);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,11 +17,11 @@
 
     <div>
         <form action="./process.php" method="post">
-            <input type="text" name="id" placeholder="Codigo" disabled>
-            <input type="text" name="model" placeholder="Modelo">
-            <input type="text" name="status" placeholder="Condição">
-            <input type="text" name="seats" placeholder="Quantidade de Assentos">
-            <input type="text" name="location" placeholder="Localização">
+            <input type="text" name="id" placeholder="Codigo" value="<?php Echo $_SESSION['id']?>">
+            <input type="text" name="model" placeholder="Modelo"value="<?php Echo $_SESSION['model']?>">
+            <input type="text" name="status" placeholder="Condição"value="<?php Echo $_SESSION['status']?>">
+            <input type="text" name="seats" placeholder="Quantidade de Assentos"value="<?php Echo $_SESSION['seats']?>">
+            <input type="text" name="location" placeholder="Localização"value="<?php Echo $_SESSION['location']?>">
             <input type="submit" value="Cadastrar">
         </form>
     </div>
@@ -36,7 +42,6 @@
         </thead>
         <tbody>
             <?php
-            session_start();
 
             if($_SESSION['elements'] != ""){
                 echo $_SESSION['elements'];

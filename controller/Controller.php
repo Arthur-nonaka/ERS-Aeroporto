@@ -52,7 +52,7 @@ class Controller
              '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["seats"] . "</td>".
             '<td>' . $aircraft["location"] . "</td>".
-            "<td> <a href='./process.php?id=".$aircraft["id"]."'>X</a> </td>";
+            "<td> <a href='./process.php?id=".$aircraft["id"]."&type=delete'>X</a> <a href='./process.php?id=".$aircraft["id"]."&type=edit&model=".$aircraft["model"]."&status=".$aircraft["status"]."&seats=".$aircraft["seats"]."&location=".$aircraft["location"]."'>🖊</a> </td>";
             $elements .= "</tr>";
         }
 
@@ -78,7 +78,7 @@ class Controller
              '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["seats"] . "</td>".
             '<td>' . $aircraft["location"] . "</td>". 
-            "<td> <a href='./process.php?id=".$aircraft["id"]."'>X</a> </td>";
+            "<td> <a href='./process.php?id=".$aircraft["id"]."&type=delete'>X</a> <a href='./process.php?id=".$aircraft["id"]."&type=edit&model=".$aircraft["model"]."&status=".$aircraft["status"]."&seats=".$aircraft["seats"]."&location=".$aircraft["location"]."'>🖊</a> </td>";
             $elements .= "</tr>";
         }
 
@@ -90,9 +90,26 @@ class Controller
      *
      * @param integer $id
      * 
+     * 
      * @author Arthur Nonaka Oda
      */
     public function deleteAircraft(int $id) {
         $this->database->deleteAircraftById($id);
+    }
+
+    /**
+     * Edit an especific aircraft of database
+     *
+     * @param integer $id
+     * @param string $model
+     * @param string $status
+     * @param int $seats
+     * @param string $location
+     * 
+     * @author Arthur Nonaka Oda
+     */
+    public function editAircraft(int $id, string $model, string $status, int $seats, string $location) {
+        $aircraft = new Aircraft($status, $model, $seats, $location);
+        $this->database->updateAircraftById($aircraft, $id);
     }
 }
