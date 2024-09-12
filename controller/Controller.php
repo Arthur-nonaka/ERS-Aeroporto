@@ -37,7 +37,7 @@ class Controller
     /**
      * Get all aircrafts of the database
      *
-     * @return string Show a table with aircrafts
+     * @return string $elements Show a table with aircrafts
      * 
      * @author Arthur Nonaka Oda
      */
@@ -63,7 +63,8 @@ class Controller
      * Filter the aircrafts in database based on a search
      *
      * @param string $model
-     * @return string Show a table with the filtered aircrafts
+     * 
+     * @return string $elements Show a table with the filtered aircrafts
      * 
      * @author Arthur Nonaka Oda
      */
