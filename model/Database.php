@@ -24,7 +24,7 @@ class Database
     public function insertAircraft($aircraft)
     {
         $connection = $this->connectDB();
-        $query = "INSERT INTO aircraft (status, model, seats, location) VALUES ('".$aircraft->getStatus()."', '".$aircraft->getModel()."', '".$aircraft->getSeats()."', '".$aircraft->getLocation()."')";
+        $query = "INSERT INTO aircraft (status, model, seats, location) VALUES ('" . $aircraft->getStatus() . "', '" . $aircraft->getModel() . "', '" . $aircraft->getSeats() . "', '" . $aircraft->getLocation() . "')";
         mysqli_query($connection, $query);
     }
 
@@ -32,6 +32,14 @@ class Database
     {
         $connection = $this->connectDB();
         $query = "SELECT * FROM aircraft";
+        $result = mysqli_query($connection, $query);
+        return ($result);
+    }
+
+    public function getAircraftByModel($model)
+    {
+        $connection = $this->connectDB();
+        $query = "SELECT * FROM aircraft WHERE model LIKE '%" . $model . "%'";
         $result = mysqli_query($connection, $query);
         return ($result);
     }
