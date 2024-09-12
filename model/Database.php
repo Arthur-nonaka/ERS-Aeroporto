@@ -100,6 +100,8 @@ class Database
     /**
      * Updates an aircraft by its id
      * 
+     * @author Matheus Mendes dos Santos
+     * 
      * @param int id
      * @param string status
      * @param string model
