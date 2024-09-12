@@ -32,7 +32,7 @@
         
         $controller = new Controller();
         
-        Echo $controller->getAircrafts();
+        Echo $controller->getFilteredAircrafts();
         ?>
         </tbody>
     </table>

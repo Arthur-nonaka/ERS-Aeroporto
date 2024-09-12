@@ -33,4 +33,20 @@ class Controller
 
         return $elements;
     }
+
+    public function getFilteredAircrafts(string $model) {
+        $aircrafts = $this->database->getAircraftByModel($model);
+        $elements = "<tr>";
+
+        foreach($aircrafts as $aircraft) {
+            $elements .= '<td>' . $aircraft["id"]. "</td>" .
+             '<td>' . $aircraft["status"] . "</td>".
+            '<td>' . $aircraft["model"] . "</td>".
+            '<td>' . $aircraft["seats"] . "</td>".
+            '<td>' . $aircraft["location"] . "</td>";
+            $elements .= "</tr>";
+        }
+
+        return $elements;
+    }
 }
