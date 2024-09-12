@@ -18,6 +18,12 @@
             <input type="submit" value="Cadastrar">
         </form>
     </div>
+    <div>
+        <form action="./process.php">
+            <input type="text" name="search">
+            <input type="submit" value="Procurar">
+        </form>
+    </div>
     <table>
         <thead>
             <td>Codigo</td>
@@ -27,12 +33,18 @@
             <td>Localização</td>
         </thead>
         <tbody>
-            <?php 
-        require_once "../controller/Controller.php";
-        
-        $controller = new Controller();
-        
-        Echo $controller->getAircrafts();
+            <?php
+            session_start();
+
+            if($_SESSION[$elements] != null){
+                echo $_SESSION[$elements];
+            } else {
+                require_once "../controller/Controller.php";
+                
+                $controller = new Controller();
+                
+                Echo $controller->getAircrafts();
+            }
         ?>
         </tbody>
     </table>
