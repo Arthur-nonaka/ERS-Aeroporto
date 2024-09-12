@@ -1,6 +1,8 @@
 <?php
 /**
- * Database class used to execute functions
+ * Class Database
+ * 
+ * Used to execute functions
  * 
  * @author Matheus Mendes dos Santos
  */
