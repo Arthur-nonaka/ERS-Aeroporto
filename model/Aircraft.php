@@ -1,10 +1,16 @@
 <?php
+/**
+ * Aircraft is a entity class that has model,status,seats,location
+ */
 class Aircraft {
     private string $status;
     private string $model;
     private int $seats;
     private string $location;
-
+    
+    /**
+     * Construct
+     */
     public function __construct(string $status, string $model, int $seats, string $location) {
         $this->status = $status;
         $this->model = $model;

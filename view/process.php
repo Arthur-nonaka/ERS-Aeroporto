@@ -33,7 +33,7 @@ if(!empty($_POST['search'])){
 if(!empty($_GET['id'])){
     $id = $_GET['id'];
 
-    $controller->deleteAircraft();
+    $controller->deleteAircraft($id);
 
     header("Location: ./index.php");
     die();

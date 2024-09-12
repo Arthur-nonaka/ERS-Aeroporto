@@ -28,7 +28,7 @@ class Controller
              '<td>' . $aircraft["status"] . "</td>".
             '<td>' . $aircraft["seats"] . "</td>".
             '<td>' . $aircraft["location"] . "</td>".
-            "<td> X </td>";
+            "<td> <a href='./process.php?id=".$aircraft["id"]."'>X</a> </td>";
             $elements .= "</tr>";
         }
 
@@ -50,5 +50,9 @@ class Controller
         }
 
         return $elements;
+    }
+
+    public function deleteAircraft(int $id) {
+        $this->database->deleteAircraftById($id);
     }
 }
