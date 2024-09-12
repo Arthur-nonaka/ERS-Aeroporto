@@ -1,6 +1,9 @@
 <?php
+
 /**
- * Database class used to execute functions
+ * Class Database
+ * 
+ * Used to execute functions
  * 
  * @author Matheus Mendes dos Santos
  */
@@ -91,6 +94,25 @@ class Database
     {
         $connection = $this->connectDB();
         $query = "DELETE FROM aircraft WHERE id = " . $id;
+        mysqli_query($connection, $query);
+    }
+
+    /**
+     * Updates an aircraft by its id
+     * 
+     * @param int id
+     * @param string status
+     * @param string model
+     * @param int seats
+     * @param string location
+     * 
+     * @return string all aircraft where model has the searched string
+     */
+
+    public function updateAircraftById($aircraft, $id)
+    {
+        $connection = $this->connectDB();
+        $query = "UPDATE aircraft SET status = '" . $aircraft->getStatus() . "', model = '" . $aircraft->getModel() . "', seats = '" . $aircraft->getSeats() . "', location = '" . $aircraft->getLocation() . "' WHERE id = " . $id;
         mysqli_query($connection, $query);
     }
 }
