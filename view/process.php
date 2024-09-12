@@ -1,0 +1,20 @@
+<?php
+require_once "../controller/Controller.php";
+
+$model = $_POST['model'];
+$status = $_POST['status'];
+$seats = $_POST['seats'];
+$location = $_POST['location'];
+
+if(!empty($_POST['model']) && !empty($_POST['status']) && 
+   !empty($_POST['seats']) && !empty($_POST['location'])){
+    $model = $_POST['model'];
+    $status = $_POST['status'];
+    $seats = $_POST['seats'];
+    $location = $_POST['location'];
+    
+    $controller = new Controller();
+
+    
+}
+?>
