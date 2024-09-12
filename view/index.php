@@ -11,6 +11,7 @@
 
     <div>
         <form action="./process.php" method="post">
+            <input type="text" name="id" placeholder="Codigo" disabled>
             <input type="text" name="model" placeholder="Modelo">
             <input type="text" name="status" placeholder="Condição">
             <input type="text" name="seats" placeholder="Quantidade de Assentos">

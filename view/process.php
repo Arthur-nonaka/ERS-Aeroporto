@@ -5,14 +5,17 @@ $controller = new Controller();
 
 if(!empty($_POST['model']) && !empty($_POST['status']) && 
    !empty($_POST['seats']) && !empty($_POST['location'])){
-    $model = $_POST['model'];
-    $status = $_POST['status'];
-    $seats = $_POST['seats'];
-    $location = $_POST['location'];
-    
+       $model = $_POST['model'];
+       $status = $_POST['status'];
+       $seats = $_POST['seats'];
+       $location = $_POST['location'];
+    if(!empty($_POST['id'])){
+        $id = $_POST['id'];
 
-    $controller->registerAircraft($status, $model,$seats, $location);
-
+        $controller->editAircraft($id, $model, $status, $seats, $location);
+    } else {
+        $controller->registerAircraft($status, $model,$seats, $location);
+    }
     header("location: ./index.php");
     die();
 }
