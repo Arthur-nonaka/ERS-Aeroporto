@@ -1,6 +1,10 @@
 <?php
 /**
- * Aircraft is a entity class that has model,status,seats,location
+ * Class Aircraft 
+ * 
+ * An entity class that has model,status,seats,location
+ * 
+ * @author Arthur Nonaka Oda
  */
 class Aircraft {
     private string $status;
@@ -9,7 +13,18 @@ class Aircraft {
     private string $location;
     
     /**
-     * Construct
+     * Aircraft constructor.
+     *
+     * Initializes a new Aircraft object with the provided status, model, seats and location.
+     *
+     * @param string $status The status of the aircraft.
+     * @param string $model The model of the aircraft.
+     * @param int $seats The amount of total seats in the aircraft.
+     * @param string $location The location of the aircraft.
+     * 
+     * @author Arthur Nonaka Oda
+     *
+     * @throws InvalidArgumentException if the name or email is empty.
      */
     public function __construct(string $status, string $model, int $seats, string $location) {
         $this->status = $status;

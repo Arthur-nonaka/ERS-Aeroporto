@@ -23,7 +23,7 @@ class Database
      * Connects to the database
      * 
      * @author Matheus Mendes dos Santos
-     * @return connection
+     * @return mysqli connection
      */
 
     public function connectDB()
@@ -37,7 +37,7 @@ class Database
      * 
      * @author Matheus Mendes dos Santos
      * 
-     * @param aircraft
+     * @param string aircraft has the aircrafts objects
      */
 
     public function insertAircraft($aircraft)
@@ -53,7 +53,7 @@ class Database
      * 
      * @author Matheus Mendes dos Santos
      * 
-     * @return result
+     * @return string return all aircrafts
      */
     public function selectAircrafts()
     {
@@ -68,8 +68,8 @@ class Database
      * 
      * @author Matheus Mendes dos Santos
      * 
-     * @param model
-     * @return result
+     * @param string model
+     * @return string all aircraft where model has the searched string
      */
 
     public function getAircraftByModel($model)
@@ -85,7 +85,7 @@ class Database
      * 
      * @author Matheus Mendes dos Santos
      * 
-     * @param id
+     * @param int id 
      */
     public function deleteAircraftById($id)
     {
