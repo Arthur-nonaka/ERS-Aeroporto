@@ -60,8 +60,9 @@
     <ul>
         <li>Arthur Nonaka</li>
         <li>Caio Yudi</li>
-        <li>Pedro Muraro</li>
         <li>Matheus Mendes</li>
+        <li>Pedro Muraro</li>
+        <li>Paulo Diney</li>
 </ul>
 </footer>
 </body>
